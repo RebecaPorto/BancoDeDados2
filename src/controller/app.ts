@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 app.get('/veiculo', (req, res) => {
     const listaDeVeiculos = listarVeiculos();
 
-	console.log(`Retornando a lista de veiculos cadastrados`);
+    console.log(`Retornando a lista de veículos cadastrados`);
 
     res.json(listaDeVeiculos);
 });
@@ -33,13 +33,13 @@ app.listen(port, () => {
 
 app.post('/cadastro', (req, res) => {
    
-const { placa, modelo, combustivel, rodas, altura, marca, kmrodado, eixos } = req.body;
+    const { placa, modelo, combustivel, rodas, altura, marca, kmrodado, eixos, capacidadecarga, tipocarga, numeroportas, tipo } = req.body;
 
-const veiculo = new Veiculo(placa, modelo, combustivel, rodas, altura, marca, kmrodado, eixos);
+    const veiculo = new Veiculo(placa, modelo, combustivel, rodas, altura, marca, kmrodado, eixos, capacidadecarga, tipocarga, numeroportas, tipo);
 
-console.log(veiculo);
+    console.log(veiculo);
 
-persistirVeiculos(veiculo);
+    persistirVeiculos(veiculo);
 
-res.json({ mensagem: "Veiculo cadastrado com sucesso" })
-})
+    res.json({ mensagem: "Veículo cadastrado com sucesso" });
+});

@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Veiculo = void 0;
 class Veiculo {
-    //método construtor
-    constructor(_placa, _modelo, _combustivel, _rodas, _altura, _marca, _kmrodado, _eixos) {
+    // método construtor
+    constructor(_placa, _modelo, _combustivel, _rodas, _altura, _marca, _kmrodado, _eixos, _capacidadecarga, _tipocarga, _numeroportas, _tipo) {
         this.placa = _placa;
         this.modelo = _modelo;
         this.combustivel = _combustivel;
@@ -12,13 +12,12 @@ class Veiculo {
         this.marca = _marca;
         this.kmrodado = _kmrodado;
         this.eixos = _eixos;
+        this.capacidadecarga = _capacidadecarga;
+        this.tipocarga = _tipocarga;
+        this.numeroportas = _numeroportas;
+        this.tipo = _tipo;
     }
     // métodos GETTERS and SETTERS
-    /**
-     * Retorna o nome da pessoa
-     *
-     * @returns veiculo : placa
- */
     getPlaca() {
         return this.placa;
     }
@@ -67,15 +66,49 @@ class Veiculo {
     setEixos(_eixos) {
         this.eixos = _eixos;
     }
+    getCapacidadeCarga() {
+        return this.capacidadecarga;
+    }
+    setCapacidadeCarga(_capacidadecarga) {
+        this.capacidadecarga = _capacidadecarga;
+    }
+    getTipoCarga() {
+        return this.tipocarga;
+    }
+    setTipoCarga(_tipocarga) {
+        this.tipocarga = _tipocarga;
+    }
+    getNumeroPortas() {
+        return this.numeroportas;
+    }
+    setNumeroPortas(_numeroportas) {
+        this.numeroportas = _numeroportas;
+    }
+    getTipo() {
+        return this.tipo;
+    }
+    setTipo(_tipo) {
+        this.tipo = _tipo;
+    }
+    acelerar(velocidade) {
+        console.log(`Veículo acelerando a ${velocidade} km/h.`);
+    }
+    frear() {
+        console.log('Veículo freando.');
+    }
     mostraVeiculo() {
         console.log(`Placa: ${this.placa}
-    Modelo: ${this.modelo}
-    Combustivel:  ${this.combustivel}
-    Rodas: ${this.rodas}
-    Altura: ${this.altura}
-    Marca: ${this.marca}
-    KmRodado: ${this.kmrodado}
-    Eixos: ${this.eixos}`);
+            Modelo: ${this.modelo}
+            Combustivel:  ${this.combustivel}
+            Rodas: ${this.rodas}
+            Altura: ${this.altura}
+            Marca: ${this.marca}
+            KmRodado: ${this.kmrodado}
+            Eixos: ${this.eixos}
+            Capacidade Carga: ${this.capacidadecarga}
+            Tipo Carga: ${this.tipocarga}
+            Numero Portas: ${this.numeroportas}
+            Tipo: ${this.tipocarga}`);
     }
 }
 exports.Veiculo = Veiculo;
